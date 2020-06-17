@@ -11,8 +11,8 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/corporate" component={Corporate} />
-				<Route path="/individual" component={Individual} />
+				<Route path="/corporate/:email/:phone" component={Corporate} />
+				<Route path="/individual/:email/:phone" component={Individual} />
 				<Route exact path="/" component={Home} />
 			</Switch>
 		</Router>
