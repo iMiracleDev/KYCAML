@@ -1,0 +1,38 @@
+.home {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+
+	h1 {
+		padding: 1rem 0;
+		text-align: center;
+		border-bottom: 1px solid black;
+	}
+
+	form {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 60%;
+		display: flex;
+		flex-direction: column;
+
+		> div {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			input {
+				width: 80%;
+			}
+
+			button {
+				margin-left: 2rem;
+			}
+		}
+	}
+}
