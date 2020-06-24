@@ -4,13 +4,24 @@
   height: 60vh;
   color: rgba(85, 84, 84, 0.9);
 
-  .navigation {
+  .form-wrap {
     position: relative;
+    height: 50vh;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
     padding: 1.5rem 3rem;
+    height: 75px;
+    z-index: 100;
+    width: 100%;
+    background: white;
 
     img {
       width: 7rem;
@@ -71,6 +82,10 @@
         &::placeholder {
           color: #777;
         }
+
+        &.error {
+          border-color: red;
+        }
       }
 
       button {
@@ -88,7 +103,7 @@
   }
 }
 
-footer {
+.footer {
   background: url(./assets/background.jpg);
   background-repeat: repeat;
   background-size: auto;
@@ -114,5 +129,56 @@ footer {
       letter-spacing: 6px;
       margin-top: 2rem;
     }
+  }
+}
+
+header {
+  position: relative;
+  background-position: 50% 0px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: url(./assets/background.jpg);
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+
+  &::before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(252, 252, 252, 0.5);
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1.5em;
+    margin-bottom: 3rem;
+    color: rgba(143, 139, 90, 0.902);
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1rem;
+    color: rgba(85, 84, 84, 0.9);
+    line-height: 1.164;
+    text-align: center;
+  }
+
+  > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
   }
 }
