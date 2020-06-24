@@ -93,7 +93,8 @@ const Home = () => {
               <button
                 type="submit"
                 className="btn btn-primary"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   if (validateEmail(email) && phone) {
                     history.push(`/individual/${email}/${phone}`);
                   }
@@ -104,7 +105,8 @@ const Home = () => {
               <button
                 type="submit"
                 className="btn btn-primary"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   if (validateEmail(email) && phone) {
                     history.push(`/corporate/${email}/${phone}`);
                   }
