@@ -51,45 +51,32 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <header>
-          <div
-            onClick={() => {
-              // window.location.hash = "#kyc";
-              document
-                .getElementById("kyc")
-                .scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            <h1>CRYPTO BOUTIQUE</h1>
-            <h2>Know Your Customer Service</h2>
-          </div>
-        </header>
         <div className="form-wrap" id="kyc">
           <form>
-            <h4>Type your email address and phone number:</h4>
+            <h4>Welcome to cb live kyc</h4>
             <div>
-              <label>Email</label>
               <input
                 className={isValidEmail ? "error" : ""}
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                placeholder="YOUR EMAIL"
                 required
               />
             </div>
 
             <div>
-              <label>Phone</label>
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+                placeholder="ENTER YOUR PHONE NUMBER"
                 required
               />
             </div>
 
-            <h5>Select your type:</h5>
-            <div style={{ justifyContent: "flex-end" }}>
+            <h5>SELECT YOUR TYPE</h5>
+            <div>
               <button
                 type="submit"
                 className="btn btn-primary"
@@ -116,18 +103,6 @@ const Home = () => {
               </button>
             </div>
           </form>
-        </div>
-        <div className="footer">
-          <div className="logo">
-            {" "}
-            <img src={logo} alt="logo" />
-            <a
-              href="http://themeforest.net/user/theme-guru/portfolio"
-              target="_blank"
-            >
-              © cb live services 2020
-            </a>
-          </div>
         </div>
       </div>
     </>
