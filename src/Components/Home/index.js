@@ -5,11 +5,17 @@ import websdk from "@sumsub/websdk";
 import "./style.scss";
 
 import logo from "./assets/cblive_logo.png";
+import menu from "./assets/menu.svg";
 
 const Home = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(false);
+  const [showMenu, setShowMenu] = useState(
+    !/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+      navigator.userAgent.toLowerCase()
+    )
+  );
 
   const history = useHistory();
 
@@ -18,12 +24,19 @@ const Home = () => {
     setIsValidEmail(!re.test(String(email).toLowerCase()));
     return re.test(String(email).toLowerCase());
   };
+
   return (
     <>
       <div className="home">
         <div className="navigation">
           <img src={logo} alt="logo" />
-          <ul>
+          <img
+            className="mini"
+            src={menu}
+            alt="menu"
+            onClick={() => setShowMenu(!showMenu)}
+          />
+          <ul style={{ display: showMenu ? "flex" : "none" }}>
             <li>
               <a href="https://cbl.services/#home" target="_blank">
                 Home
