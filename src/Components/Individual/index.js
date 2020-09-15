@@ -21,7 +21,7 @@ const Individual = (props) => {
 				accessToken = res.data.data.token;
 				console.log(params.email);
 				let sumsubSdk = websdk
-					.Builder('https://test-api.sumsub.com', 'IndividualKYC')
+					.Builder('https://api.sumsub.com', 'IndividualKYC')
 					.withAccessToken(accessToken, () => {
 						// EXPIRATION HANDLER
 						/* generate a new token and launch WebSDK again */
