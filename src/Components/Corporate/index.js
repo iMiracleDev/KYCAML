@@ -19,7 +19,7 @@ const Corporate = (props) => {
 			.get(`${process.env.REACT_APP_API_URL}/get_token`, { params: { UserID: applicantEmail } })
 			.then((res) => {
 				accessToken = res.data.data.token;
-				console.log(applicantEmail);
+				console.log(params.email);
 				let sumsubSdk = websdk
 					.Builder('https://test-api.sumsub.com', 'CorporateKYC')
 					.withAccessToken(accessToken, () => {
@@ -28,11 +28,13 @@ const Corporate = (props) => {
 					})
 					.withConf({
 						lang: 'en',
-						email: applicantEmail,
+						email: params.email,
 						phone: applicantPhone, // if available
 
 						onMessage: (type, payload) => {
-							console.log('WebSDK onMessage', type, payload);
+							if (type === 'idCheck.onApplicantLoaded') {
+								console.log(payload.applicantId);
+							}
 						},
 						onError: (error) => {
 							console.log('WebSDK onError', error);
